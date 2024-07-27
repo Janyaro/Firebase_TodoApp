@@ -26,7 +26,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       theme: ThemeData(
           primaryColor: Colors.deepPurple, primarySwatch: Colors.deepPurple),
-      home: const AddNoteScreen(),
+      home: const SplashScreen(),
     );
   }
 }

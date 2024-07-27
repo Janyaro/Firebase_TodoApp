@@ -16,6 +16,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: true,
           backgroundColor: Colors.deepPurple,
           title: const Text('add Note'),
           centerTitle: true,
@@ -43,9 +44,9 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
               InkWell(
                 onTap: () {
                   String id = DateTime.now().microsecondsSinceEpoch.toString();
-                  databaseRef.child(id).set(
-                      {'title ': noteController.text.toString(), 'id': id});
-                  showMyDialog();
+                  databaseRef
+                      .child(id)
+                      .set({'title': noteController.text, 'id': id});
                 },
                 child: Container(
                   width: double.infinity,
@@ -56,26 +57,12 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
                   child: const Center(
                       child: Text(
                     'Add Note',
-                    style: TextStyle(color: Colors.white, fontSize: 18),
+                    style: TextStyle(color: Colors.white),,
                   )),
                 ),
               )
             ],
           ),
         ));
-  }
-
-  void showMyDialog() {
-    showDialog(
-        context: context,
-        builder: (BuildContext context) {
-          return AlertDialog(
-            title:const Text('Data saved Successfully'),
-            actions: [
-              
-              TextButton(onPressed: () {Navigator.pop(context),}, child: Text('Ok')),
-            ],
-          );
-        });
   }
 }
