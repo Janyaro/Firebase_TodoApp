@@ -57,7 +57,7 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
                   child: const Center(
                       child: Text(
                     'Add Note',
-                    style: TextStyle(color: Colors.white),,
+                    style: TextStyle(color: Colors.white),
                   )),
                 ),
               )

@@ -39,10 +39,8 @@ class _ViewNoteScreenState extends State<ViewNoteScreen> {
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: TextFormField(
               controller: searchController,
-              decoration: const InputDecoration(
-                  contentPadding: EdgeInsets.all(10),
-                  hintText: 'Search',
-                  border: OutlineInputBorder()),
+              decoration: InputDecoration(
+                  hintText: 'Search ', border: OutlineInputBorder()),
               onChanged: (String value) {
                 setState(() {});
               },
